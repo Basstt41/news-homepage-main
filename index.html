@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Frontend Mentor | News homepage</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <img src="./assets/images/logo.svg" alt="" srcset="">
+    <div class="nav-button">
+      <button id="open-nav">
+        <img src="./assets/images/icon-menu.svg" alt="">
+      </button>
+    </div>
+    <div class="navbar-collapse">
+      <div class="nav-close-button">
+        <button id="close-nav">
+          <img src="./assets/images/icon-menu-close.svg" alt="">
+        </button>
+      </div>
+      <ul class="nav-links">
+        <li><a href="">Home</a></li>
+        <li><a href="">New</a></li>
+        <li><a href="">Popular</a></li>
+        <li><a href="">Trending</a></li>
+        <li><a href=""> Categories</a></li>
+      </ul>
+    </div>
+  </nav>
+  <header>
+
+    <picture>
+      <source media="(min-width: 600px)" srcset="./assets/images/image-web-3-desktop.jpg" type="image/jpg">
+      <img src="./assets/images/image-web-3-mobile.jpg" alt="" style="max-width: 100%;">
+    </picture>
+    <section>
+      <h1>
+        The Bright Future of Web 3.0?
+      </h1>
+      <div class="header__text-container">
+        <p>
+          We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of
+          the
+          people.
+          But is it really fulfilling its promise?
+        </p>
+        <button>Read more</button>
+      </div>
+
+    </section>
+  </header>
+
+  
+
+    <aside class="dark-card">
+      <h2>New</h2>
+      <h5>Hydrogen VS Electric Cars</h5>
+      Will hydrogen-fueled cars ever catch up to EVs?
+      <hr>
+      <h5>The Downsides of AI Artistry</h5>
+      What are the possible adverse effects of on-demand AI image generation?
+      <hr>
+      <h5>Is VC Funding Drying Up?</h5>
+      Private funding by VC firms is down 50% YOY. We take a look at what that means.
+      
+    </aside>
+  <main>
+    <section class="post-card">
+      <article>
+        <div class="img-container"><img src="./assets/images/image-retro-pcs.jpg" alt=""></div>
+        <div class="text-container">
+          <span>01</span>
+          <h6>Reviving Retro PCs</h6>
+          <p>What happens when old PCs are given modern upgrades?</p>
+        </div>
+      </article>
+      <article>
+        <div class="img-container"><img src="./assets/images/image-top-laptops.jpg" alt=""></div>
+        <div class="text-container">
+          <span>02</span>
+          <h6>Top 10 Laptops of 2022</h6>
+          <p>Our best picks for various needs and budgets.</p>
+        </div>
+      </article>
+      <article>
+        <div class="img-container"><img src="./assets/images/image-gaming-growth.jpg" alt=""></div>
+        <div class="text-container">
+          <span>03</span>
+          <h6>The Growth of Gaming</h6>
+          <p>How the pandemic has sparked fresh opportunities.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- FIN -->
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/Basstt41" target="_blank">Basstt41</a>.
+  </div>
+  <!-- Scrips -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <script>
+        const openNavBtn = document.getElementById('open-nav')
+        const closeNavBtn = document.getElementById('close-nav')
+        const navCollapse = document.querySelector('.navbar-collapse')
+
+        openNavBtn.onclick = () => {
+          navCollapse.classList.add('navbar-collapse-open')
+        }
+        closeNavBtn.onclick = () => {
+          navCollapse.classList.remove('navbar-collapse-open')
+
+        }
+    </script>
+</body>
+
+</html>

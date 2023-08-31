@@ -1,0 +1,251 @@
+// Colores
+$Soft-orange: hsl(35, 77%, 62%);
+$Soft-red: hsl(5, 85%, 63%);
+
+$Off-white: hsl(36, 100%, 99%);
+$Grayish-blue: hsl(233, 8%, 79%);
+$Dark-grayish-blue: hsl(236, 13%, 42%);
+$Very-dark-blue: hsl(240, 100%, 5%);
+
+// Fonts
+$f-size: 15px;
+$fw-regular: 400px;
+$fw-bold: 700;
+$fw-bolder: 800;
+$f-family: 'Inter', sans-serif;
+
+$padding: 2em;
+
+body {
+    font-family: $f-family;
+    font-size: $f-size;
+    font-weight: $fw-regular;
+    padding: $padding / 2;
+    background-color: $Off-white;
+    display: grid;
+    place-items: center;
+    nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1em 0 2em 0;
+        button {
+            border: none;
+            background-color: transparent;
+            img {
+                width: 35px;
+                
+            }
+        }
+        
+        .navbar-collapse {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $Off-white;
+            height: 100%;
+            width: 60%; // CAMBIAR
+            padding: $padding / 2 0;
+            display: none;
+            grid-template-rows: 50px auto;
+            place-items: center;
+            ul {
+                list-style: none;
+                height: 100%;
+                width: 100%;
+                padding: 4em 2em;
+                li {
+                    margin-bottom: .5em;
+                    a {
+                        text-decoration: none;
+                        color: $Dark-grayish-blue;
+                        font-weight: $fw-bold;
+                        &:hover {
+                            color: $Soft-orange;
+                        }
+                    }
+                }  
+                
+                
+            }
+            .nav-close-button {
+                width: 100%;
+                display: flex;
+                justify-content: end;
+                padding-right: $padding / 2;
+                button {
+                    border: none;
+                    background-color: transparent;
+                    img {
+                            width: 30px;
+                    }
+                }
+            }
+        }
+        .navbar-collapse-open {
+            display: grid !important;
+        }
+    }
+    header {
+        section {
+            padding: $padding 0;
+            margin-bottom: 2em;
+            h1 {
+                font-weight: $fw-bolder;
+                font-size: 2.68em;
+                color: $Very-dark-blue;
+            }
+            p {
+                color: $Dark-grayish-blue;
+                font-size: 14px;
+            }
+
+            button {
+                border: none;
+                background-color: $Soft-red;
+                color: $Off-white;
+                font-weight: $fw-bold;
+                font-size: .7rem;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                padding: $padding / 2 $padding;
+                transition: 200ms;
+                &:hover {
+                    background-color: $Very-dark-blue;
+                    color: $Grayish-blue;
+                }
+            }
+        }
+    }
+        .dark-card {
+            background-color: $Very-dark-blue;
+            color: $Dark-grayish-blue;
+            padding: $padding;
+            margin-bottom: 3em;
+    
+            h2 {
+                font-weight: $fw-bolder;
+                color: $Soft-orange;
+                margin-bottom: $padding / 2;
+            }
+    
+            h5 {
+                color: $Grayish-blue;
+                font-weight: $fw-bold;
+            }
+    
+            hr {
+                background-color: $Grayish-blue;
+            }
+        }
+    main {
+        
+        .post-card {
+            article {
+                display: flex;
+                margin-bottom: 3em;
+                gap: 1em;
+                .img-container {
+                    img{ width: 100px;}
+                }
+                .text-container {
+                    span {
+                        color: $Grayish-blue;
+                        font-weight: $fw-bold;
+                        font-size: 2em;
+                    }
+                    h6 {
+                        font-weight: $fw-bolder;
+                        color: $Very-dark-blue;
+                        font-size: 1.2em;
+                    }
+                    p {
+                        color: $Dark-grayish-blue;
+                        font-weight: $fw-regular;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 600px) {
+    body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        "nbar nbar nbar"
+        "hero hero dark-card"
+        "card card card";
+        place-items: start;
+        grid-template-rows: auto 90vh auto;
+        grid-gap: 1em;
+        padding: 2em 4em;
+        nav {
+            grid-area: nbar;
+            .nav-button {
+                display: none;
+            }
+            .navbar-collapse {
+                display: block;
+                position: inherit;
+                padding: 0;
+                button {
+                    display: none;
+                }
+                ul {
+                    display: flex;
+                    align-items: end;
+                    justify-content: end;
+                    gap: 1em;
+                    padding: 0;
+                    height: 60px;
+                }
+            }
+        }
+        header {
+            grid-area: hero;
+            section {
+                display: grid;
+                grid-template-columns: repeat(2, 50%);
+                height: 100%;
+                place-items: center;
+                h1 {
+                    font-size: 4.2rem;
+                }
+                .header__text-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    justify-content: space-around;
+                    height: 100%;
+                    p {
+                        font-size: medium;
+                        font-weight: $fw-regular;
+                    }
+                    button {
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
+        .dark-card {
+            grid-area: dark-card;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        main {
+            grid-area: card;
+            .post-card {
+                margin-top: 2em;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        
+    }
+} 
+
